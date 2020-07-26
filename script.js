@@ -6,7 +6,7 @@ const image2 = document.getElementById('image2');
 const image3 = document.getElementById('image3');
 const textBox = document.getElementById('text-box');
 
-const themeSwitcher = (mode) => {
+const themeModeSwitcher = (mode) => {
   nav.style.backgroundColor =
     mode === 'dark' ? 'rgb(0 0 0 / 50%)' : 'rgb(255 255 255 / 50%)';
   textBox.style.backgroundColor =
@@ -26,11 +26,11 @@ const switchTheme = (e) => {
   if (e.target.checked) {
     document.documentElement.setAttribute('data-theme', 'dark');
     localStorage.setItem('theme', 'dark');
-    themeSwitcher('dark');
+    themeModeSwitcher('dark');
   } else {
     document.documentElement.setAttribute('data-theme', 'light');
     localStorage.setItem('theme', 'light');
-    themeSwitcher('light');
+    themeModeSwitcher('light');
   }
 };
 
@@ -43,6 +43,6 @@ if (currentTheme) {
 
   if (currentTheme === 'dark') {
     toggleSwitch.checked = true;
-    themeSwitcher('dark');
+    themeModeSwitcher('dark');
   }
 }
